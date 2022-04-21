@@ -1,6 +1,8 @@
 """
 A python quiz game.
 """
+from PIL import Image
+#import os
 
 def quiz():
     score = 0
@@ -91,17 +93,22 @@ def quiz():
     print("Your score:" + str(score))
     print("Your percentage: " + str((score / 10) * 100) + " %")
 
+#EXECUTION THAT LETS YOU ACCESS THE QUIZ, BASED ON THE USER'S RESPONSE.
 #Greeting the user.
 print("Welcome\nThis is a computer quiz game.")
 
 playing = input("Do you want to play? ")
-#Keeping track of the score
 
 
 if playing.lower() != "yes":
     quit()
 
+#Displays message to let user know the game has started
 print("Okay! Let's play")
+
+#Displays image of the word "quiz" if playing == "yes".
+img_strt = Image.open("gameone.jpg")
+img_strt.show("gameone.jpg")
 quiz()
 
 
@@ -109,7 +116,10 @@ quiz()
 replay = input("Would you like to play again? ").lower()
 if replay == "yes":
     quiz()
-else:
-    print("Thanks for your feedback.")
-    quit()
+
+print("Thanks for your feedback.")
+img_thb = Image.open("thumbsup.jpg")
+img_thb.show("thumbsup.jpg")
+quit()
+
 
